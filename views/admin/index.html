@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block css %}
+	<link rel="stylesheet" href="/build/css/admin.css">
+{% endblock %}
+
+{% block content %}
+{% include 'nav.html' %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" id="dashboard">
+                
+            </div>
+        </div>
+    </div>
+    {% include 'widgets/createUserModal.html' %}
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/scripts/helper.js" charset="utf-8"></script>
+<script src="/static/scripts/admin.js" charset="utf-8"></script>
+{% include 'widgets/userTable.html' %}
+{% endblock %}

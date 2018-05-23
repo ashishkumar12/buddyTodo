@@ -1,0 +1,38 @@
+{% verbatim %}
+<script type="text/x-handlebars-template" id="user_table">
+    {{#compare data.length 0}}
+    <div class="col-md-12">
+        <p>You have 0 user. Create New user!</p>
+        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#create_user_modal">
+            Create New user
+        </button>
+    </div>
+    {{else}}
+    <div class="col-md-12">
+        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#create_user_modal">
+            Create New user
+        </button>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Count</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email Id</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <th scope="row">{{@index}}</th>
+                    <td>{{{this.name}}}</td>
+                    <td>{{{this.email}}}</td>
+                    <td>@mdo</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    {{/compare}}
+</script>
+{% endverbatim %}

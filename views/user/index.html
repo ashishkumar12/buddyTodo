@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block css %}
+	<link rel="stylesheet" href="/build/css/user.css">
+{% endblock %}
+
+{% block content %}
+{% include 'nav.html' %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" id="dashboard">
+                <h3 class="text-primary">Tasks assigned to you</h3>
+                <div class="row" id="todos_assigned_to_me"></div>
+                <hr/>
+                <h3 class="text-primary">Tasks assigned by you</h3>
+                <div class="row" id="todos_assigned_by_me"></div>
+            </div>
+        </div>
+    </div>
+    {% include 'widgets/createTodo.html' %}
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/scripts/helper.js" charset="utf-8"></script>
+<script src="/static/scripts/user.js" charset="utf-8"></script>
+{% include 'user/todo_card.html' %}
+{% endblock %}

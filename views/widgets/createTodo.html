@@ -1,0 +1,32 @@
+<div class="modal fade" id="create_todo_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Create a new Todo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="create_todo_form">
+                    <div class="form-group">
+                        <label for="_title">Title</label>
+                        <input name="title" required type="text" class="form-control" id="_title" placeholder="Enter title">
+                    </div>
+                    <div class="form-group">
+                        <label for="_description">Description</label>
+                        <input name="description" required type="text" class="form-control" id="_description" placeholder="Enter description">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Assign To</label>
+                        <input name="assigned_to" required type="email" class="form-control" id="email" placeholder="Enter email of assignee">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="submit_new_todo">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

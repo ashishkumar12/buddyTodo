@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block css %}
+	<link rel="stylesheet" href="/build/css/login.css">
+{% endblock %}
+
+{% block content %}
+    {% include 'login/login_form.html' %}
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/scripts/auth.js" charset="utf-8"></script>
+{% endblock %}

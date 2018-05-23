@@ -1,0 +1,68 @@
+{% verbatim %}
+<script type="text/x-handlebars-template" id="todo_card">
+    {{#compare template "by_me"}} {{#compare data.length 0}}
+    <div class="col-md-12 text-center text-warning">
+        <p>Task list is empty</p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create_todo_modal">
+            Create New Task
+        </button>
+    </div>
+    {{else}} {{#each data}}
+    <div class="col-md-4">
+        <div class="card todo_card">
+            <div class="card-top">
+                <p>
+                    <span class="small">Assigned By:</span> {{{this.assigned_by.email}}} {{#if this.is_completed}}
+                    <i data-task="{{this._id}}" data-toggle="tooltip" data-placement="top" title="Mark Complete this task" class="fa fa-check-circle complete_task pull-right active"
+                        aria-hidden="true"></i>
+                    {{else}}
+                    <i data-toggle="tooltip" data-placement="top" title="Mark Complete this task" data-task="{{this._id}}" class="fa fa-check-circle complete_task pull-right"
+                        aria-hidden="true"></i>
+                    {{/if}}
+                </p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{{this.title}}}</h5>
+                <p class="card-text">{{{this.description}}}</p>
+                <p class="card-text">
+                    <small class="text-muted">{{{getTimeDate this.updatedAt}}}</small>
+                </p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    <div class="col-md-4">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create_todo_modal">
+            Create New Task
+        </button>
+    </div>
+    {{/compare}} {{else}} {{#compare data.length 0}}
+    <div class="col-md-12 text-center text-warning">
+        <p>Task list is empty</p>
+    </div>
+    {{else}} {{#each data}}
+    <div class="col-md-4">
+        <div class="card todo_card">
+            <div class="card-top">
+                <p>
+                    <span class="small">Assigned By:</span> {{{this.assigned_by.email}}} {{#if this.is_completed}}
+                    <i data-task="{{this._id}}" data-toggle="tooltip" data-placement="top" title="Mark Complete this task" class="fa fa-check-circle complete_task pull-right active"
+                        aria-hidden="true"></i>
+                    {{else}}
+                    <i data-toggle="tooltip" data-placement="top" title="Mark Complete this task" data-task="{{this._id}}" class="fa fa-check-circle complete_task pull-right"
+                        aria-hidden="true"></i>
+                    {{/if}}
+                </p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{{this.title}}}</h5>
+                <p class="card-text">{{{this.description}}}</p>
+                <p class="card-text">
+                    <small class="text-muted">{{{getTimeDate this.updatedAt}}}</small>
+                </p>
+            </div>
+        </div>
+    </div>
+    {{/each}} {{/compare}} {{/compare}}
+</script>
+{% endverbatim %}
