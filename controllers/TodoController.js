@@ -85,7 +85,8 @@ exports.getAll = (req,res,next) => {
             req.data = RESP(true,null,"Something went wrong !");
         }
         if(todos.length <= 0){
-            req.data = RESP(true,null,"Todo not found !");
+            const data = {assigned_by_me : [],assigned_to_me: []}
+            req.data = RESP(false,data,"");
         }else{
             const assigned_by_me = _.filter(todos,(o) => o.assigned_by._id == req.session.user._id);
             const assigned_to_me = _.filter(todos,(o) => o.assigned_to._id == req.session.user._id && !o.is_completed);

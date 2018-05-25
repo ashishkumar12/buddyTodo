@@ -67,6 +67,7 @@ function handleTodo(){
 					$('#submit_new_todo').attr("disabled",false);
 					$('#create_todo_modal').modal('hide');
 				}else{
+					$('#submit_new_todo').attr("disabled",false);
 					alert(response.message);
 				}
 			});
